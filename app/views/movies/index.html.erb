@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Filmes</h1>
+<%= link_to "Novo filme", new_movie_path %>
+
+<div id="movies">
+  <%= form_tag movies_path, method: :get do %>
+
+    Gênero: <%= select_tag :genre_id, options_for_select(Genre.all.map { |g| [g.name, g.id] },
+                                                         params[:genre_id]),
+                           prompt: "selecione o gênero" %>
+    <%= submit_tag " Buscar Filmes" %>
+
+  <% end %>
+  <% @movies.each do |movie| %>
+    <%= render movie %>
+    <p>
+      <%= link_to "Detalhar", movie %>
+    </p>
+  <% end %>
+</div>

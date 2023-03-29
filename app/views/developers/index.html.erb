@@ -1,0 +1,14 @@
+<% if notice.present? %>
+  <p style="color: green"><%= notice %></p>
+<% end %>
+<% if alert.present? %>
+  <p style="color: red"><%= alert %></p>
+<% end %>
+
+<h1> Developers Dashboard</h1>
+<% if @api_key.present? %>
+  <p><%= @api_key %></p>
+<% end %>
+<div>
+  <%= button_to "Gerar API key" , developers_path%>
+</div>

@@ -1,0 +1,9 @@
+<% content_for :user_panel do %>
+  <div>
+    <!– substituindo isso button_to "Sign out", destroy_user_session_path, method: :delete pela linha abaixo: –>
+
+    <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete }%> Z
+    <%= link_to "Developers", developers_path %>
+  </div>
+<% end %>
+<%= render template: "layouts/application" %>
