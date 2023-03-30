@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_29_151333) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_30_143212) do
   create_table "directors", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -34,6 +34,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_29_151333) do
     t.integer "genre_id"
     t.integer "director_id"
     t.string "image"
+    t.float "average"
     t.index ["director_id"], name: "index_movies_on_director_id"
     t.index ["genre_id"], name: "index_movies_on_genre_id"
     t.index ["user_id"], name: "index_movies_on_user_id"

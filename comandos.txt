@@ -1,0 +1,16 @@
+ rails generate scaffold Movie title:string year:integer resume:text duration:integer
+ rails generate scaffold Director name:string middleName:string lastName:string
+
+
+ https://api.themoviedb.org/3/search/movie?api_key=304d8681ab745cfb013a748f17779b6b&language=pt-BR&page=1&include_adult=false&NOMEDOFILME
+
+
+
+
+ sudo service redis-server start
+ kill -9 17372
+ps aux | grep puma
+
+redis-cli
+127.0.0.1:6379> ping
+PONG
