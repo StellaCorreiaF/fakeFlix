@@ -1,7 +1,6 @@
 require 'rest-client'
 require 'json'
 
-
 class SearchMovie
   def search_movie(movie)
 
@@ -13,8 +12,5 @@ class SearchMovie
 
     get_image = result['results'][0]['poster_path']
     image = "https://image.tmdb.org/t/p/original#{get_image}"
-    get_average = result['results'][0]['vote_average']
-
   end
 end
-
