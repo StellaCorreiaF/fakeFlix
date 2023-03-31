@@ -2,8 +2,9 @@
   <a class="navbar-brand" href="/">FakeFlix</a>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-link active" href="/movies">Filmes</a>
       <%= link_to "Novo filme", new_movie_path, class:"nav-link active" %>
+      <%= link_to "Gêneros", genres_path, class:"nav-link active" %>
+      <%= link_to "Diretores", directors_path,  class:"nav-link active" %>
       <%= link_to "Developers", developers_path, class:"nav-link active" %>
 
       <div class="nav-link d-flex">
