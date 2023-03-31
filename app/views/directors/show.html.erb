@@ -1,10 +1,11 @@
+
 <p style="color: green"><%= notice %></p>
 
 <%= render @director %>
 
 <div>
-  <%= link_to "Edit this director", edit_director_path(@director) %> |
-  <%= link_to "Back to directors", directors_path %>
+  <%= link_to "Editar", edit_director_path(@director) %> |
+  <%= link_to "Voltar", directors_path %>
 
-  <%= button_to "Destroy this director", @director, method: :delete %>
+  <%= button_to "excluir", @director, method: :delete %>
 </div>

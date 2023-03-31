@@ -1,3 +1,4 @@
+
 <p style="color: green"><%= notice %></p>
 
 <div class="card" id="<%= dom_id @movie %>">
@@ -9,8 +10,8 @@
 </div>
 
 <div>
-  <%= link_to "Edit this movie", edit_movie_path(@movie) %> |
-  <%= link_to "Back to movies", movies_path %>
+  <%= link_to "Editar", edit_movie_path(@movie) %> |
+  <%= link_to "voltar", movies_path %>
 
-  <%= button_to "Destroy this movie", @movie, method: :delete %>
+  <%= button_to "deletar", @movie, method: :delete %>
 </div>
