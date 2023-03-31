@@ -1,6 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @movie %>
+<div class="card" id="<%= dom_id @movie %>">
+  <img src="<%= @movie.image %>" class="card-img-top" alt="">
+  <div class="card-body">
+    <h5 class="card-title"><%= @movie.title %></h5>
+    <p class="card-text"><%= @movie.resume %></p>
+  </div>
+</div>
 
 <div>
   <%= link_to "Edit this movie", edit_movie_path(@movie) %> |

@@ -10,37 +10,50 @@
       </ul>
     </div>
   <% end %>
+  <div class="container p-2">
+    <div class="row">
+      <div class="col">
+        <%= form.text_field :title, class:'form-control', placeholder: "Título"%>
+      </div>
+      <div class="col">
+        <%= form.number_field :duration, class:'form-control', placeholder: "Duração" %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="container p-2">
+    <div class="row">
+      <div class="col">
+        <%= form.number_field :year, class:'form-control', placeholder: "Lançamento" %>
+
+      </div>
+      <div class="col">
+        <%= form.text_area :resume, class:'form-control', placeholder: "Sinopse" %>
+
+      </div>
+
+    </div>
+
+  </div>
+  <div class="container p-2">
+    <div class="row">
+      <div class="col">
+        <%= form.collection_select :director_id, Director.all, :id, :name, class:'form-select', placeholder: "Diretor" %>
+
+
+      </div>
+      <div class="col">
+        <%= form.collection_select :genre_id, Genre.all, :id, :name, class:'form-select', placeholder: "Gênero" %>
+
+      </div>
+
+    </div>
+
+  </div>
+  <div class="d-flex justify-content-center">
+    <%= form.submit "Criar", class:"btn btn-primary btn-block mb-5" %>
   </div>
 
-  <div>
-    <%= form.label :Duração, style: "display: block" %>
-    <%= form.number_field :duration %>
-  </div>
-
-  <div>
-    <%= form.label :Lançamento, style: "display: block" %>
-    <%= form.number_field :year %>
-  </div>
-
-  <div>
-    <%= form.label :Sinopse, style: "display: block" %>
-    <%= form.text_area :resume %>
-  </div>
-  <div>
-    <%= form.label :Diretor, style: "display: block" %>
-    <%= form.collection_select :director_id, Director.all, :id, :name %>
-  </div>
-
-  <div>
-    <%= form.label :Gênero, style: "display: block" %>
-    <%= form.collection_select :genre_id, Genre.all, :id, :name %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
 <% end %>

@@ -1,29 +1,12 @@
-<div id="<%= dom_id movie %>">
-
-  <p style="align-content: center">
-    <% if movie.image.present? %>
-      <img src="<%= movie.image %>" width="280"  >
-    <% end %>
-  </p>
-  <p>
-    <strong>Title:</strong>
-    <%= movie.title %>
-  </p>
-
-  <p>
-    <strong>Duration:</strong>
-    <%= movie.duration %>
-  </p>
-
-  <p>
-    <strong>Year:</strong>
-    <%= movie.year %>
-  </p>
-
-  <p>
-    <strong>Resume:</strong>
-    <%= movie.resume %>
-  </p>
-
-
+<div class="card" id="<%= dom_id movie %>">
+  <% if movie.image.present? %>
+    <img src="<%= movie.image %>" class="card-img-top img-thumbnail" alt="">
+<% end %>
+<% if !movie.image.present? %>
+  <img src="https://www.freeiconspng.com/uploads/no-image-icon-4.png" class="card-img-top img-thumbnail" alt="">
+<% end %>
+  <div class="card-body">
+    <h5 class="card-title"><%= movie.title %></h5>
+    <a href="/movies/<%= movie.id %>" class="btn btn-primary">Detalhe</a>
+  </div>
 </div>

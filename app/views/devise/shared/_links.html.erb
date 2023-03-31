@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">FakeFlix</a>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-link active" href="/movies">Filmes</a>
+      <%= link_to "Novo filme", new_movie_path, class:"nav-link active" %>
+
+      <div class="nav-link d-flex">
+        <%= link_to "Sair", destroy_user_session_path %>
+      </div>
+    </div>
+  </div>
+</nav>

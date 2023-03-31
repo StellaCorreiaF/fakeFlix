@@ -1,21 +1,31 @@
+<%= render "devise/shared/links" %>
+
 <p style="color: green"><%= notice %></p>
 
-<h1>Filmes</h1>
-<%= link_to "Novo filme", new_movie_path %>
 
-<div id="movies">
+
+<div id="movies" class="container">
+<div class="container d-flex justify-content-center pb-3">
   <%= form_tag movies_path, method: :get do %>
-
-    Gênero: <%= select_tag :genre_id, options_for_select(Genre.all.map { |g| [g.name, g.id] },
+  <div class="row g-3 align-items-center">
+    <%= select_tag :genre_id, options_for_select(Genre.all.map { |g| [g.name, g.id] },
                                                          params[:genre_id]),
-                           prompt: "selecione o gênero" %>
-    <%= submit_tag " Buscar Filmes" %>
+                           prompt: "selecione o gênero", class:'form-select' %>
+    <%= submit_tag " Buscar Filmes", class:"btn btn-secondary" %>
+  </div>
+
 
   <% end %>
-  <% @movies.each do |movie| %>
-    <%= render movie %>
-    <p>
-      <%= link_to "Detalhar", movie %>
-    </p>
-  <% end %>
+</div>
+  <div class="container text-center">
+    <div class="row row-cols-4">
+      <% @movies.each do |movie| %>
+        <div class="col p-2">
+          <%= render movie %>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+
 </div>
